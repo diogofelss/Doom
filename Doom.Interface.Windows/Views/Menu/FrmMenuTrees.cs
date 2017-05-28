@@ -20,7 +20,7 @@ namespace Doom.Interface.Windows.Views.Menu
             InitializeComponent();
         }
 
-        private void treeViewMenu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void ControlarMenus()
         {
             switch (e.Node.Name)
             {
@@ -76,6 +76,18 @@ namespace Doom.Interface.Windows.Views.Menu
                     #endregion
 
                     #endregion
+            }
+        }
+
+        private void treeViewMenu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            try
+            {
+                ControlarMenus();
+            }
+            catch (Exception ex)
+            {
+                Globals.TratamentoErro.TratarErro(ex);
             }
         }
     }
