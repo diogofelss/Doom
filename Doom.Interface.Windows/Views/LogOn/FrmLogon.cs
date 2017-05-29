@@ -1,14 +1,6 @@
-﻿using Doom.Interface.Windows.Views.Menu;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Doom.Interface.Windows.Views.Menu;
 
 namespace Doom.Interface.Windows.Views.LogOn
 {
@@ -19,30 +11,7 @@ namespace Doom.Interface.Windows.Views.LogOn
             InitializeComponent();
         }
 
-        private void btAcessar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (RealizarLogOn())
-                {
-                    var arvoresmenus = new FrmMenuTrees();
-
-                    arvoresmenus.MdiParent = this.MdiParent;
-                    this.Close();
-
-                    arvoresmenus.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                Globals.TratamentoErro.TratarErro(ex);
-            }
-        }
-
-        private void btCancelar_Click(object sender, EventArgs e)
-        {
-            this.MdiParent.Close();
-        }
+        #region Métodos
 
         private bool RealizarLogOn()
         {
@@ -63,9 +32,39 @@ namespace Doom.Interface.Windows.Views.LogOn
             return true;
         }
 
+        #endregion
+
+        #region Eventos
+
         private void FormLogon_Load(object sender, EventArgs e)
         {
-
         }
+
+        private void btAcessar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RealizarLogOn())
+                {
+                    var arvoresmenus = new FrmMenuTrees();
+
+                    arvoresmenus.MdiParent = MdiParent;
+                    Close();
+
+                    arvoresmenus.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                Globals.TratamentoErro.TratarErro(ex);
+            }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            MdiParent.Close();
+        }
+
+        #endregion
     }
 }

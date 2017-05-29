@@ -98,7 +98,7 @@
             this.progressBar1.Size = new System.Drawing.Size(851, 15);
             this.progressBar1.TabIndex = 2;
             // 
-            // UIClientArea
+            // FrmClientArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,7 +111,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "UIClientArea";
+            this.Name = "FrmClientArea";
             this.Text = "Doom";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UIClientArea_FormClosing);

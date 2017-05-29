@@ -16,7 +16,7 @@ namespace Doom.Interface.Windows.FrameWork
             }
             else
             {
-                Globals.Mensagens.ShowMessageError(string.Format("{0}. {1}", Mensagens.Internal.MSG0001, ex.Message));
+                Globals.Mensagens.ShowMessageError(string.Format("{0}. {1}", Mensagens.Internal.MSG0000, ex.Message));
             }
         }
     }

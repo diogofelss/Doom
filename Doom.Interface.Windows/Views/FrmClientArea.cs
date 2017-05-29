@@ -1,14 +1,7 @@
-﻿using Doom.Interface.Windows.Views.LogOn;
-using Doom.Interface.Windows.Views.Menu;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Doom.Interface.Windows.Controllers;
+using Doom.Interface.Windows.Views.LogOn;
 
 namespace Doom.Interface.Windows.Views
 {
@@ -19,6 +12,15 @@ namespace Doom.Interface.Windows.Views
             InitializeComponent();
         }
 
+        private bool EncerrarAplicacao()
+        {
+            var mensagemSistema = new UIMessageController();
+
+            return mensagemSistema.SolicitarCertezaEncerrar();
+        }
+
+        #region Eventos
+
         private void UIClientArea_Load(object sender, EventArgs e)
         {
             var logon = new FrmLogon();
@@ -27,14 +29,11 @@ namespace Doom.Interface.Windows.Views
             logon.Show();
         }
 
-        #region Eventos dos Menus
-
-
-        #endregion
-
         private void UIClientArea_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            e.Cancel = !EncerrarAplicacao();
         }
+
+        #endregion
     }
 }

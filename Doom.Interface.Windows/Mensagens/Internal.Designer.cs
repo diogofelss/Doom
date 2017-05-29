@@ -61,11 +61,29 @@ namespace Doom.Interface.Windows.Mensagens {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mensagem do sistema.
+        /// </summary>
+        internal static string MSG0000 {
+            get {
+                return ResourceManager.GetString("MSG0000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ocorreu um erro interno.
         /// </summary>
         internal static string MSG0001 {
             get {
                 return ResourceManager.GetString("MSG0001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deseja realmente encerrar a aplicação?.
+        /// </summary>
+        internal static string MSG0002 {
+            get {
+                return ResourceManager.GetString("MSG0002", resourceCulture);
             }
         }
     }

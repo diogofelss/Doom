@@ -1,15 +1,9 @@
-﻿using Doom.Interface.Windows.Views.Configuracoes_Gerais;
+﻿using System;
+using System.Windows.Forms;
+using Doom.Interface.Windows.Controllers;
+using Doom.Interface.Windows.Views.Configuracoes_Gerais;
 using Doom.Interface.Windows.Views.Inicializacao.Cadastros;
 using Doom.Interface.Windows.Views.LogOn;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Doom.Interface.Windows.Views.Menu
 {
@@ -20,75 +14,72 @@ namespace Doom.Interface.Windows.Views.Menu
             InitializeComponent();
         }
 
-        private void ControlarMenus()
-        {
-            switch (e.Node.Name)
-            {
-                #region Log On / Log Off
+        #region Métodos
 
+        private void ControlarMenus(string menuName)
+        {
+            switch (menuName)
+            {
                 case "MnuLogOff":
 
-                    var ParentMDI = this.MdiParent;
+                    var mensagemsistema = new UIMessageController();
 
-                    foreach (var parent in MdiParent.MdiChildren)
+                    if (mensagemsistema.SolicitarCertezaEncerrar())
                     {
-                        parent.Close();
+                        var ParentMDI = MdiParent;
+
+                        foreach (var parent in MdiParent.MdiChildren)
+                        {
+                            parent.Close();
+                        }
+
+                        var logoff = new FrmLogon();
+                        logoff.MdiParent = ParentMDI;
+
+                        Close();
+                        logoff.Show();
                     }
 
-                    var logoff = new FrmLogon();
-                    logoff.MdiParent = ParentMDI;
-
-                    this.Close();
-                    logoff.Show();
-
                     break;
-
-                #endregion
-
-                #region Configuracoes Gerais
 
                 case "MnuUsuarios":
 
                     var usuario = new FrmUsuario();
-                    usuario.MdiParent = this.MdiParent;
+                    usuario.MdiParent = MdiParent;
                     usuario.Show();
 
                     break;
 
-                #endregion
-
-                #region Inicialização
-
-                #region Cadastros
-
-                #region Empresa
-
                 case "MnuEmpresa":
 
                     var empresa = new FrmEmpresa();
-                    empresa.MdiParent = this.MdiParent;
+                    empresa.MdiParent = MdiParent;
                     empresa.Show();
 
                     break;
-
-                    #endregion
-
-                    #endregion
-
-                    #endregion
             }
         }
+
+        #endregion
+
+        #region Eventos
 
         private void treeViewMenu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             try
             {
-                ControlarMenus();
+                ControlarMenus(e.Node.Name);
             }
             catch (Exception ex)
             {
                 Globals.TratamentoErro.TratarErro(ex);
             }
+            finally
+            {
+                GC.Collect();
+            }
         }
+
+        #endregion
     }
 }

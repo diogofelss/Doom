@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,9 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Entities\Cadastros\Empresa.cs" />
+    <Compile Include="Entities\Documentos\NotaFiscal.cs" />
     <Compile Include="Entities\LogOn.cs" />
     <Compile Include="Entities\Validation.cs" />
+    <Compile Include="Enums\DocumentEnum.cs" />
     <Compile Include="FrameWork\Strings\PassWordString.cs" />
+    <Compile Include="Interfaces\ICadastro.cs" />
+    <Compile Include="Interfaces\IDocumento.cs" />
     <Compile Include="Mensagens\LogOnMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -45,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FrameWork\Exceptions\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Validations\" />
   </ItemGroup>
   <ItemGroup>
