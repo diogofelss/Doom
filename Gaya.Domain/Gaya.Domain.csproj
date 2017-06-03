@@ -31,12 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Entities\Cadastros\Empresa.cs" />
-    <Compile Include="Entities\Documentos\NotaFiscal.cs" />
+    <Compile Include="Entities\Common\Cadastro.cs" />
     <Compile Include="Entities\LogOn.cs" />
+    <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\Validation.cs" />
     <Compile Include="Enums\DocumentEnum.cs" />
-    <Compile Include="FrameWork\Strings\PassWordString.cs" />
+    <Compile Include="FrameWork\Strings\CryptSecurity.cs" />
     <Compile Include="Interfaces\ICadastro.cs" />
     <Compile Include="Interfaces\IDocumento.cs" />
     <Compile Include="Mensagens\LogOnMessages.Designer.cs">
@@ -47,10 +47,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Security.Cryptography, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Security.Cryptography.1.7.2\lib\net35\Security.Cryptography.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FrameWork\Exceptions\" />
+    <Folder Include="Services\" />
     <Folder Include="Validations\" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +63,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogOnMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

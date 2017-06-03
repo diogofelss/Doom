@@ -13,7 +13,7 @@ namespace Gaya.Domain.Entities
 
         public int IdEmpresa { get; set; }
         public string Usuario { get; set; }
-        public PassWordString Senha { get; set; }
+        public string Senha { get; set; }
 
         private Validation validacao { get; set; }
 
@@ -26,7 +26,7 @@ namespace Gaya.Domain.Entities
                 return validacao;
             }
 
-            if (Senha.IsNullOrWhiteSpace)
+            if (string.IsNullOrWhiteSpace(Senha))
             {
                 validacao.Id = -1;
                 validacao.Mensagem = Mensagens.LogOnMessages.VAL0002;

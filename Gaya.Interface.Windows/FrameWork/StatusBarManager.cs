@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Gaya.Interface.Windows.FrameWork
+namespace Gaya.Windows.FrameWork
 {
     public class StatusBarManager
     {

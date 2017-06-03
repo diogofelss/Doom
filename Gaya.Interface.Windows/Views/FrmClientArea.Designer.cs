@@ -1,4 +1,4 @@
-﻿namespace Gaya.Interface.Windows.Views
+﻿namespace Gaya.Windows.Views
 {
     partial class FrmClientArea
     {
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Gaya.Interface.Windows.Properties.Resources.DoomClientArea;
+            this.BackgroundImage = global::Gaya.Windows.Properties.Resources.DoomClientArea;
             this.ClientSize = new System.Drawing.Size(851, 477);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.textStatusBar);
@@ -112,7 +112,10 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmClientArea";
-            this.Text = "Gaya Software";
+
+            var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+            this.Text = string.Format("Gaya Software {0}", version);
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UIClientArea_FormClosing);
             this.Load += new System.EventHandler(this.UIClientArea_Load);

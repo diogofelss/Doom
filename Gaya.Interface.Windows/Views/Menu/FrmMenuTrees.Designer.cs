@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Gaya.Interface.Windows.Views.Menu
+namespace Gaya.Windows.Views.Menu
 {
     partial class FrmMenuTrees
     {

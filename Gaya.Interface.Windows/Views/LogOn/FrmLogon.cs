@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Gaya.Interface.Windows.Views.Menu;
+using Gaya.Windows.Views.Menu;
 
-namespace Gaya.Interface.Windows.Views.LogOn
+namespace Gaya.Windows.Views.LogOn
 {
     public partial class FrmLogon : Form
     {

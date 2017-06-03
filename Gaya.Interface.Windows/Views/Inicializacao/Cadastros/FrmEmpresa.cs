@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gaya.Interface.Windows.Views.Inicializacao.Cadastros
+namespace Gaya.Windows.Views.Inicializacao.Cadastros
 {
     public partial class FrmEmpresa : Form
     {

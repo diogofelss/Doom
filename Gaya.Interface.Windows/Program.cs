@@ -1,12 +1,12 @@
-﻿using Gaya.Interface.Windows.Views;
-using Gaya.Interface.Windows.Views.LogOn;
+﻿using Gaya.Windows.Views;
+using Gaya.Windows.Views.LogOn;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gaya.Interface.Windows
+namespace Gaya.Windows
 {
     static class Program
     {

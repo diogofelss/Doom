@@ -1,6 +1,6 @@
-﻿using Gaya.Interface.Windows.FrameWork;
+﻿using Gaya.Windows.FrameWork;
 
-namespace Gaya.Interface.Windows
+namespace Gaya.Windows
 {
     public static class Globals
     {

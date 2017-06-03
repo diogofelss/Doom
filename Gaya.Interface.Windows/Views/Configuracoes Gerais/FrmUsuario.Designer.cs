@@ -1,4 +1,4 @@
-﻿namespace Gaya.Interface.Windows.Views.Configuracoes_Gerais
+﻿namespace Gaya.Windows.Views.Configuracoes_Gerais
 {
     partial class FrmUsuario
     {

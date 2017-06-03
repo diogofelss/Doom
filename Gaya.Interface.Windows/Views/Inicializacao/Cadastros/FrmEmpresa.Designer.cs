@@ -1,4 +1,4 @@
-﻿namespace Gaya.Interface.Windows.Views.Inicializacao.Cadastros
+﻿namespace Gaya.Windows.Views.Inicializacao.Cadastros
 {
     partial class FrmEmpresa
     {

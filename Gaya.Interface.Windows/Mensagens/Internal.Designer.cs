@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gaya.Interface.Windows.Mensagens {
+namespace Gaya.Windows.Mensagens {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Gaya.Interface.Windows.Mensagens {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gaya.Interface.Windows.Mensagens.Internal", typeof(Internal).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gaya.Windows.Mensagens.Internal", typeof(Internal).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

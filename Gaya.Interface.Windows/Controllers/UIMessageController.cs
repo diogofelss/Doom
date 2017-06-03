@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using Gaya.Interface.Windows.Mensagens;
+using Gaya.Windows.Mensagens;
 
-namespace Gaya.Interface.Windows.Controllers
+namespace Gaya.Windows.Controllers
 {
     public class UIMessageController
     {

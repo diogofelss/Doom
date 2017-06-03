@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using Gaya.Interface.Windows.Controllers;
-using Gaya.Interface.Windows.Views.LogOn;
+using Gaya.Windows.Controllers;
+using Gaya.Windows.Views.LogOn;
 
-namespace Gaya.Interface.Windows.Views
+namespace Gaya.Windows.Views
 {
     public partial class FrmClientArea : Form
     {

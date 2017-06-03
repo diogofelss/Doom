@@ -1,4 +1,4 @@
-﻿namespace Gaya.Interface.Windows.Views.LogOn
+﻿namespace Gaya.Windows.Views.LogOn
 {
     partial class FrmLogon
     {

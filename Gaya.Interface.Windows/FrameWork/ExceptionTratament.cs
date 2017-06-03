@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gaya.Interface.Windows.FrameWork
+namespace Gaya.Windows.FrameWork
 {
     public class ExceptionTratament
     {

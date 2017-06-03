@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gaya.Interface.Windows.Views.Configuracoes_Gerais
+namespace Gaya.Windows.Views.Configuracoes_Gerais
 {
     public partial class FrmUsuario : Form
     {
