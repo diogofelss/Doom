@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Interface", "1 - Interface", "{91CB09A8-BD44-413B-8A82-29D7BF5D1184}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Rules", "2 - Rules", "{A77C4F67-2775-4110-947A-01A08DAE0EA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Database", "3 - Database", "{CAD0494E-3BD9-4082-B471-A5B2B04F7B52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Installer", "5 - Installer", "{4D46F018-212A-4E7C-BE80-0AEB4388AA59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaya.Domain", "Gaya.Domain\Gaya.Domain.csproj", "{FCDD00A9-1BAB-4364-84FA-790B7D36D2E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaya.Database", "Gaya.Database\Gaya.Database.csproj", "{F0A3AA31-7436-449B-B05F-E71A93FC25F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaya.Interface.Windows", "Gaya.Interface.Windows\Gaya.Interface.Windows.csproj", "{69C0F2F7-799C-48AB-94F7-9720F640AF00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCDD00A9-1BAB-4364-84FA-790B7D36D2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDD00A9-1BAB-4364-84FA-790B7D36D2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDD00A9-1BAB-4364-84FA-790B7D36D2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDD00A9-1BAB-4364-84FA-790B7D36D2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A3AA31-7436-449B-B05F-E71A93FC25F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A3AA31-7436-449B-B05F-E71A93FC25F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A3AA31-7436-449B-B05F-E71A93FC25F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A3AA31-7436-449B-B05F-E71A93FC25F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C0F2F7-799C-48AB-94F7-9720F640AF00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C0F2F7-799C-48AB-94F7-9720F640AF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C0F2F7-799C-48AB-94F7-9720F640AF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C0F2F7-799C-48AB-94F7-9720F640AF00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCDD00A9-1BAB-4364-84FA-790B7D36D2E7} = {A77C4F67-2775-4110-947A-01A08DAE0EA9}
+		{F0A3AA31-7436-449B-B05F-E71A93FC25F1} = {CAD0494E-3BD9-4082-B471-A5B2B04F7B52}
+		{69C0F2F7-799C-48AB-94F7-9720F640AF00} = {91CB09A8-BD44-413B-8A82-29D7BF5D1184}
+	EndGlobalSection
+EndGlobal

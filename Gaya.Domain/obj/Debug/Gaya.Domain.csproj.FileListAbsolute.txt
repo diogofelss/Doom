@@ -1,0 +1,9 @@
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\bin\Debug\Gaya.Domain.dll
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\bin\Debug\Gaya.Domain.pdb
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\bin\Debug\Gaya.Domain.dll.CodeAnalysisLog.xml
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\bin\Debug\Gaya.Domain.dll.lastcodeanalysissucceeded
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\obj\Debug\Gaya.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\obj\Debug\Gaya.Domain.Mensagens.LogOnMessages.resources
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\obj\Debug\Gaya.Domain.csproj.GenerateResource.Cache
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\obj\Debug\Gaya.Domain.dll
+C:\Users\Diogo\Documents\Programacao\GayaSoftware\Gaya.Domain\obj\Debug\Gaya.Domain.pdb
