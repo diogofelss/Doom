@@ -32,13 +32,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Context\GayaContext.cs" />
+    <Compile Include="EntityConfig\EmpresaConfiguration.cs" />
     <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Common\CadastroRepository.cs" />
+    <Compile Include="Repositories\Common\DocumentoRepository.cs" />
+    <Compile Include="Repositories\Common\RepositoryBase.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>

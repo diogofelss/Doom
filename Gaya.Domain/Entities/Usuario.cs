@@ -2,7 +2,7 @@
 
 namespace Gaya.Domain.Entities
 {
-    public sealed class Usuario : Common.Cadastro
+    public class Usuario : Common.Cadastro
     {
         private CryptSecurity cryptSecurity;
 
@@ -27,7 +27,7 @@ namespace Gaya.Domain.Entities
             }
             set
             {
-                var senhacrypt = cryptSecurity.Encrypt(value);
+                _senha = cryptSecurity.Encrypt(value);
             }
         }
         public bool Ativo { get; set; }

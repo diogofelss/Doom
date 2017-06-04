@@ -32,13 +32,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Common\Cadastro.cs" />
+    <Compile Include="Entities\Common\Documento.cs" />
+    <Compile Include="Entities\Empresa.cs" />
     <Compile Include="Entities\LogOn.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\Validation.cs" />
     <Compile Include="Enums\DocumentEnum.cs" />
+    <Compile Include="FrameWork\Exceptions\ExceptionTratamento.cs" />
     <Compile Include="FrameWork\Strings\CryptSecurity.cs" />
-    <Compile Include="Interfaces\ICadastro.cs" />
-    <Compile Include="Interfaces\IDocumento.cs" />
+    <Compile Include="FrameWork\Strings\Keys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Keys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Common\ICadastroRepository.cs" />
+    <Compile Include="Interfaces\Common\IDocumentoRepository.cs" />
+    <Compile Include="Interfaces\Common\IEmpresaRepository.cs" />
+    <Compile Include="Interfaces\Common\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\IUsuarioRepository.cs" />
     <Compile Include="Mensagens\LogOnMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -54,11 +65,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FrameWork\Exceptions\" />
     <Folder Include="Services\" />
     <Folder Include="Validations\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrameWork\Strings\Keys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Keys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mensagens\LogOnMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogOnMessages.Designer.cs</LastGenOutput>

@@ -1,4 +1,6 @@
-﻿using Gaya.Domain.Entities;
+﻿using Gaya.Database.EntityConfig;
+using Gaya.Domain.Entities;
+using Gaya.Domain.FrameWork.Strings;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -15,12 +17,13 @@ namespace Gaya.Database.Context
 
         private static string GetConnectionString()
         {
-            return string.Empty;
+            return "Server=LAPTOP-AGMCP52N;Database=GAYA_DIFEL;User Id=sa;Password = difel_123; ";
         }
 
         #region DB Set
 
-        public DbSet<Usuario> USUARIO { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Empresa> Empresa { get; set; }
 
         #endregion
 
@@ -30,11 +33,11 @@ namespace Gaya.Database.Context
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Properties<string>()
-                .Configure(p => p.HasColumnType("varchar"));
+            modelBuilder.Properties<string>().Configure(p => p.HasColumnType("varchar"));
+            modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(254));
 
-            modelBuilder.Properties<string>()
-                .Configure(p => p.HasMaxLength(254));
+            modelBuilder.Configurations.Add(new UsuarioConfiguration());
+            modelBuilder.Configurations.Add(new EmpresaConfiguration());
         }
 
         public override int SaveChanges()
@@ -67,15 +70,11 @@ namespace Gaya.Database.Context
 
             foreach (var entry in ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("Senha") != null))
             {
-                if (entry.State == EntityState.Added)
-                {
-                    entry.Property("DataAtualizacao").CurrentValue = null;
-                }
+                var originalValue = entry.Property("Senha").CurrentValue.ToString();
 
-                if (entry.State == EntityState.Modified)
-                {
-                    entry.Property("DataAtualizacao").CurrentValue = DateTime.Now;
-                }
+                var crypt = new CryptSecurity();
+
+                entry.Property("Senha").CurrentValue = crypt.Encrypt(originalValue);
             }
 
             return base.SaveChanges();

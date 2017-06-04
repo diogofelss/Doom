@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gaya.Domain.FrameWork.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,9 @@ namespace Gaya.Windows.FrameWork
     {
         public void TratarErro(Exception ex)
         {
-            if (ex.InnerException != null)
-            {
-                TratarErro(ex);
-            }
-            else
-            {
-                Globals.Mensagens.ShowMessageError(string.Format("{0}. {1}", Mensagens.Internal.MSG0000, ex.Message));
-            }
+            var tratamento = new ExceptionTratamento();
+
+            Globals.Mensagens.ShowMessageError(string.Format("{0}. {1}", Mensagens.Internal.MSG0000, tratamento.Tratar(ex)));
         }
     }
 }

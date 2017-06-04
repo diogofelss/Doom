@@ -8,7 +8,16 @@ namespace Gaya.Domain.Entities
 {
     public class Validation
     {
-        public int Id { get; set; }
-        public string Mensagem { get; set; }
+        private int _id;
+        private string message;
+
+        public Validation()
+        {
+            _id = 0;
+            message = string.Empty;
+        }
+
+        public int Id { get { return _id; } set { _id = value; } }
+        public string Mensagem { get { return message; } set { message = value; } }
     }
 }

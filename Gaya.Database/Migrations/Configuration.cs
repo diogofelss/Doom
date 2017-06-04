@@ -1,5 +1,6 @@
 namespace Gaya.Database.Migrations
 {
+    using Domain.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -9,11 +10,26 @@ namespace Gaya.Database.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Gaya.Database.Context.GayaContext context)
         {
+            //var usuarioRoot = context.USUARIO.Where(c => c.Nome == "root").FirstOrDefault();
+            //
+            //if (usuarioRoot == null)
+            //{
+            //    usuarioRoot = new Usuario();
+            //
+            //    usuarioRoot.EmpresaId = 1;
+            //    usuarioRoot.Nome = "root";
+            //    usuarioRoot.Senha = "difel123";
+            //    usuarioRoot.UsuarioCadastroId = 0;
+            //    usuarioRoot.Ativo = true;
+            //
+            //    context.USUARIO.AddOrUpdate(usuarioRoot);
+            //}
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
