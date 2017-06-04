@@ -1,18 +1,16 @@
+using System.Data.Entity.Migrations;
+using Gaya.Database.Context;
+
 namespace Gaya.Database.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Gaya.Database.Context.GayaContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GayaContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Gaya.Database.Context.GayaContext context)
+        protected override void Seed(GayaContext context)
         {
             //  This method will be called after migrating to the latest version.
 

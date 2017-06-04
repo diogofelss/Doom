@@ -185,6 +185,10 @@
     <Content Include="DoomIcon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gaya.Database.Common\Gaya.Database.Common.csproj">
+      <Project>{64a87fbd-cfab-4763-a8e6-5cea9a43e0fa}</Project>
+      <Name>Gaya.Database.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gaya.Database\Gaya.Database.csproj">
       <Project>{f0a3aa31-7436-449b-b05f-e71a93fc25f1}</Project>
       <Name>Gaya.Database</Name>
