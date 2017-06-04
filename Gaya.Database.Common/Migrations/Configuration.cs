@@ -1,19 +1,29 @@
-namespace Gaya.Database.Migrations
+using Gaya.Domain.Entities.Common;
+
+namespace Gaya.Database.Common.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Gaya.Database.Context.GayaContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Gaya.Database.Common.Context.CommonContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Gaya.Database.Context.GayaContext context)
+        protected override void Seed(Context.CommonContext context)
         {
+            var parametros = context.CommonParameters.FirstOrDefault();
+
+            if (parametros == null)
+            {
+                context.CommonParameters.Add(new CommonParameters());
+                context.SaveChanges();
+            }
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

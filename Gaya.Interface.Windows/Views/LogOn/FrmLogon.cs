@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Gaya.Windows.Controllers;
 using Gaya.Windows.Views.Menu;
 
 namespace Gaya.Windows.Views.LogOn
@@ -29,7 +30,9 @@ namespace Gaya.Windows.Views.LogOn
                 return false;
             }
 
-            return true;
+            var usuarioController = new UsuarioController();
+
+            return usuarioController.Exists(logon.Usuario, logon.Senha, logon.IdEmpresa);
         }
 
         #endregion

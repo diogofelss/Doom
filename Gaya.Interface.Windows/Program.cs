@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gaya.Windows.AutoMapper;
 
 namespace Gaya.Windows
 {
@@ -23,6 +24,8 @@ namespace Gaya.Windows
 
             Globals.Mensagens = new FrameWork.StatusBarManager(areaclient.textStatusBar, areaclient.progressBar1);
             Globals.TratamentoErro = new FrameWork.ExceptionTratament();
+
+            AutoMapperConfig.RegisterMapping();
 
             Application.Run(areaclient);
         }

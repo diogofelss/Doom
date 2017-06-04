@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Gaya.Domain.Entities;
 using Gaya.Domain.Entities.Common;
+using Gaya.Domain.Enums;
 using Gaya.Domain.Interfaces.Common;
 
 namespace Gaya.Database.Repositories.Common
@@ -16,7 +16,7 @@ namespace Gaya.Database.Repositories.Common
         public Validation Cancel(T entity)
         {
             entity.Cancelado = true;
-            entity.Status = Domain.Enums.DocumentEnum.EnStatusDocumento.Cancelado;
+            entity.Status = DocumentEnum.EnStatusDocumento.Cancelado;
 
             return Update(entity);
         }
@@ -39,7 +39,7 @@ namespace Gaya.Database.Repositories.Common
         public Validation Restore(T entity)
         {
             entity.Cancelado = false;
-            entity.Status = Domain.Enums.DocumentEnum.EnStatusDocumento.Aberto;
+            entity.Status = DocumentEnum.EnStatusDocumento.Aberto;
 
             return Update(entity);
         }

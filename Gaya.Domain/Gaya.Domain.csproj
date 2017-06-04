@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="Entities\Common\Cadastro.cs" />
     <Compile Include="Entities\Common\Documento.cs" />
+    <Compile Include="Entities\Common\CommonParameters.cs" />
     <Compile Include="Entities\Empresa.cs" />
     <Compile Include="Entities\LogOn.cs" />
     <Compile Include="Entities\Usuario.cs" />
@@ -46,8 +47,9 @@
       <DependentUpon>Keys.resx</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Common\ICadastroRepository.cs" />
+    <Compile Include="Interfaces\Common\ICommonParametersRepository.cs" />
     <Compile Include="Interfaces\Common\IDocumentoRepository.cs" />
-    <Compile Include="Interfaces\Common\IEmpresaRepository.cs" />
+    <Compile Include="Interfaces\IEmpresaRepository.cs" />
     <Compile Include="Interfaces\Common\IRepositoryBase.cs" />
     <Compile Include="Interfaces\IUsuarioRepository.cs" />
     <Compile Include="Mensagens\LogOnMessages.Designer.cs">

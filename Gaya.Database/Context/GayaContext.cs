@@ -1,10 +1,10 @@
-﻿using Gaya.Database.EntityConfig;
-using Gaya.Domain.Entities;
-using Gaya.Domain.FrameWork.Strings;
-using System;
+﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using Gaya.Database.EntityConfig;
+using Gaya.Domain.Entities;
+using Gaya.Domain.FrameWork.Strings;
 
 namespace Gaya.Database.Context
 {
@@ -12,7 +12,6 @@ namespace Gaya.Database.Context
     {
         public GayaContext() : base(GetConnectionString())
         {
-
         }
 
         private static string GetConnectionString()
@@ -42,7 +41,8 @@ namespace Gaya.Database.Context
 
         public override int SaveChanges()
         {
-            foreach (var entry in ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("DataCadastro") != null))
+            foreach (
+                var entry in ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("DataCadastro") != null))
             {
                 if (entry.State == EntityState.Added)
                 {
@@ -55,7 +55,9 @@ namespace Gaya.Database.Context
                 }
             }
 
-            foreach (var entry in ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("DataAtualizacao") != null))
+            foreach (
+                var entry in
+                    ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("DataAtualizacao") != null))
             {
                 if (entry.State == EntityState.Added)
                 {

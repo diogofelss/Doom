@@ -1,65 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
-using Gaya.Domain.Entities;
-using Gaya.Domain.Interfaces.Common;
-using Gaya.Database.Context;
-using Gaya.Domain.FrameWork.Exceptions;
+using System.Data.Entity;
 using System.Linq;
+using Gaya.Database.Context;
+using Gaya.Domain.Entities;
+using Gaya.Domain.FrameWork.Exceptions;
+using Gaya.Domain.Interfaces.Common;
 
 namespace Gaya.Database.Repositories.Common
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected GayaContext database = new GayaContext();
-        protected Validation validation = new Validation();
-        protected ExceptionTratamento tratamento = new ExceptionTratamento();
+        protected GayaContext Database = new GayaContext();
+        protected Validation Validation = new Validation();
+        protected ExceptionTratamento Tratamento = new ExceptionTratamento();
 
         public Validation Add(T entity)
         {
             try
             {
-                database.Set<T>().Add(entity);
-                database.SaveChanges();
+                Database.Set<T>().Add(entity);
+                Database.SaveChanges();
             }
             catch(Exception ex)
             {
-                validation.Id = -1;
-                validation.Mensagem = tratamento.Tratar(ex);
+                Validation.Id = -1;
+                Validation.Mensagem = Tratamento.Tratar(ex);
             }
 
-            return validation;
+            return Validation;
         }
 
         public void Dispose()
         {
-            database = null;
+            GC.SuppressFinalize(Database);
+            GC.SuppressFinalize(Tratamento);
+            GC.SuppressFinalize(Validation);
             GC.Collect();
         }
 
         public IEnumerable<T> GetAll()
         {
-            return database.Set<T>().ToList();
+            return Database.Set<T>().ToList();
         }
 
         public T GetByKey(int key)
         {
-            return database.Set<T>().Find(key);
+            return Database.Set<T>().Find(key);
         }
 
         public Validation Update(T entity)
         {
             try
             {
-                database.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-                database.SaveChanges();
+                Database.Entry(entity).State = EntityState.Modified;
+                Database.SaveChanges();
             }
             catch (Exception ex)
             {
-                validation.Id = -1;
-                validation.Mensagem = tratamento.Tratar(ex);
+                Validation.Id = -1;
+                Validation.Mensagem = Tratamento.Tratar(ex);
             }
 
-            return validation;
+            return Validation;
         }
     }
 }

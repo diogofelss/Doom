@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using Gaya.Domain.Entities;
 using Gaya.Domain.Entities.Common;
 using Gaya.Domain.Interfaces.Common;
-using Gaya.Database.Repositories.Common;
-using Gaya.Database.Context;
-using Gaya.Domain.FrameWork.Exceptions;
 
 namespace Gaya.Database.Repositories.Common
 {
     public class CadastroRepository<T> : RepositoryBase<T>, ICadastroRepository<T> where T : Cadastro
     {
-        protected new GayaContext database = new GayaContext();
-        protected new Validation validation = new Validation();
-        protected new ExceptionTratamento tratamento = new ExceptionTratamento();
-
         public new Validation Add(T entity)
         {
             return base.Add(entity);
@@ -39,16 +32,16 @@ namespace Gaya.Database.Repositories.Common
         {
             try
             {
-                database.Set<T>().Remove(entity);
-                database.SaveChanges();
+                Database.Set<T>().Remove(entity);
+                Database.SaveChanges();
             }
             catch (Exception ex)
             {
-                validation.Id = -1;
-                validation.Mensagem = tratamento.Tratar(ex);
+                Validation.Id = -1;
+                Validation.Mensagem = Tratamento.Tratar(ex);
             }
 
-            return validation;
+            return Validation;
         }
 
         public new Validation Update(T entity)
