@@ -16,7 +16,8 @@ namespace Gaya.Database.Context
 
         private static string GetConnectionString()
         {
-            return "Server=LAPTOP-AGMCP52N;Database=GAYA_DIFEL;User Id=sa;Password = difel_123; ";
+            //return "Server=LAPTOP-AGMCP52N;Database=GAYA_DIFEL;User Id=sa;Password = difel_123; ";
+            return @"Server=WW7-DIOGO\SQL2014;Database=GAYA_DIFEL;User Id=sa;Password = siesanta_123; ";
         }
 
         #region DB Set

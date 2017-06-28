@@ -1,5 +1,6 @@
 using System.Data.Entity.Migrations;
 using Gaya.Database.Context;
+using Gaya.Domain.Entities;
 
 namespace Gaya.Database.Migrations
 {
@@ -24,6 +25,15 @@ namespace Gaya.Database.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            //var usuario = new Usuario();
+            //
+            //usuario.Ativo = true;
+            //usuario.EmpresaId = 1;
+            //usuario.Nome = "root";
+            //usuario.Senha = "123456";
+            //
+            //context.Usuario.Add(usuario);
         }
     }
 }

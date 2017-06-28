@@ -23,7 +23,7 @@ namespace Gaya.Domain.Entities
         {
             get
             {
-                return cryptSecurity.Decrypt(_senha);
+                return _senha;
             }
             set
             {
